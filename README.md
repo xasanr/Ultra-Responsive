@@ -1,1 +1,0 @@
-# Mening-Rasmlar-Saytim

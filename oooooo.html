@@ -1,0 +1,251 @@
+ <!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choyxona Sayt</title>
+<style>
+  /* ===== Global ===== */
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    background: #f5f0e1;
+    scroll-behavior: smooth;
+  }
+  a { text-decoration: none; color: inherit; }
+  header, footer { width: 100%; text-align: center; }
+  .container { width: 90%; margin: auto; }
+
+  /* ===== Header ===== */
+  header {
+    background: #c50831;
+    color: rgb(7, 5, 5);
+    padding: 20px 0;
+    perspective: 1000px;
+  }
+  header h1 {
+    font-size: 3em;
+    transform: rotateX(15deg);
+    transition: transform 0.5s;
+    cursor: default;
+  }
+  header h1:hover { transform: rotateX(0deg) scale(1.05); }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    background: #000000;
+  }
+  nav a {
+    color: #fff;
+    margin: 0 20px;
+    font-weight: bold;
+    padding: 15px;
+    transition: color 0.3s, transform 0.3s;
+  }
+  nav a:hover { color: #ff0606; transform: scale(1.1); }
+
+  /* ===== Hero ===== */
+  .hero {
+    height: 70vh;
+    background: url('https://images.unsplash.com/photo-1565958011703-44f9829c4c92?fit=crop&w=1470&q=80') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    perspective: 1000px;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(197, 96, 146, 0.5);
+  }
+  .hero h2 {
+    color: white;
+    font-size: 3em;
+    z-index: 1;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    transform: translateZ(0);
+  }
+
+  /* ===== Menu ===== */
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 0;
+  }
+  .menu-item {
+    width: 250px;
+    margin: 20px;
+    border-radius: 15px;
+    background: #fff;
+    perspective: 1000px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.6s;
+  }
+  .menu-item:hover { transform: rotateY(15deg) scale(1.05); }
+  .menu-item img {
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    object-fit: cover;
+  }
+  .menu-item h3 { text-align: center; margin: 15px 0 5px 0; color: #5b3a2e; }
+  .menu-item p { text-align: center; margin: 0 15px; color: #7a4c2b; }
+
+  /* ===== About ===== */
+  .about { display: flex; flex-wrap: wrap; justify-content: center; margin: 50px 0; }
+  .about-card {
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.5s;
+  }
+  .about-card:hover { transform: rotateY(10deg) scale(1.05); }
+
+  /* ===== Events ===== */
+  .events { display: flex; flex-wrap: wrap; justify-content: center; margin: 50px 0; }
+  .event-card {
+    width: 300px;
+    margin: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.5s;
+  }
+  .event-card:hover { transform: scale(1.05); }
+  .event-card img { width: 100%; height: 200px; object-fit: cover; }
+  .event-card h4 { margin: 10px; color: #5b3a2e; }
+  .event-card p { margin: 0 10px 10px 10px; color: #7a4c2b; }
+
+  /* ===== Contact ===== */
+  .contact { display: flex; flex-wrap: wrap; justify-content: center; margin: 50px 0; }
+  .contact form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+  .contact form input, .contact form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  .contact form button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #1d8b4b;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .contact form button:hover { background: #d9b382; color: #000; }
+
+  footer { background: #c50515; color: #fff; padding: 20px; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Choyxona</h1>
+</header>
+
+<nav>
+  <a href="#home">Bosh sahifa</a>
+  <a href="#menu-section">Menu</a>
+  <a href="#about-section">Biz haqimizda</a>
+  <a href="#events-section">Yangiliklar</a>
+  <a href="#contact-section">Aloqa</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <h2>Choy va Dam olish</h2>
+</section>
+
+<!-- Menu -->
+<section class="menu container" id="menu-section">
+  <div class="menu-item">
+    <img src="https://images.unsplash.com/photo-1603046891541-9869a44800f4?fit=crop&w=600&q=80" alt="Choy">
+    <h3>Qora Choy</h3>
+    <p>Ajoyib aroma va toza lazzat bilan.</p>
+  </div>
+  <div class="menu-item">
+    <img src="https://images.unsplash.com/photo-1590080875783-3c58c17ed170?fit=crop&w=600&q=80" alt="Kofe">
+    <h3>Kofe</h3>
+    <p>Sokin va quvvatli kun uchun mukammal.</p>
+  </div>
+  <div class="menu-item">
+    <img src="https://images.unsplash.com/photo-1590080875693-b6e7e2d50f35?fit=crop&w=600&q=80" alt="Shirinlik">
+    <h3>Shirinliklar</h3>
+    <p>Choy bilan ajoyib uyg‘unlik.</p>
+  </div>
+  <div class="menu-item">
+    <img src="https://images.unsplash.com/photo-1593516153174-1a1b2c9b23d1?fit=crop&w=600&q=80" alt="Ichimlik">
+    <h3>Ichimliklar</h3>
+    <p>Salqin va tetiklantiruvchi ichimliklar.</p>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about container" id="about-section">
+  <div class="about-card">
+    <h3>Bizning Tariximiz</h3>
+    <p>2010 yildan beri sifatli choy xizmatimiz bilan sizlar bilan.</p>
+  </div>
+  <div class="about-card">
+    <h3>Jamoamiz</h3>
+    <p>Mutaxassis baristalar va mehmondo‘st xodimlar.</p>
+  </div>
+  <div class="about-card">
+    <h3>Missiyamiz</h3>
+    <p>Har bir mehmonimizni qulaylik va zavq bilan qabul qilish.</p>
+  </div>
+</section>
+
+<!-- Events -->
+<section class="events container" id="events-section">
+  <div class="event-card">
+    <img src="https://images.unsplash.com/photo-1557683316-973673baf926?fit=crop&w=600&q=80" alt="Event">
+    <h4>Choy Tadbirlar</h4>
+    <p>Yangi taomlar taqdimoti va master-klasslar.</p>
+  </div>
+  <div class="event-card">
+    <img src="https://images.unsplash.com/photo-1557683316-9a86d0e5b927?fit=crop&w=600&q=80" alt="Event">
+    <h4>Muzik Kechalar</h4>
+    <p>Dam olish va musiqa bilan zavq olish.</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact container" id="contact-section">
+  <form>
+    <input type="text" placeholder="Ismingiz" required>
+    <input type="text" placeholder="Telefon raqamingiz" required>
+    <textarea placeholder="Xabar" rows="4" required></textarea>
+    <button type="submit">Yuborish</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2026 Choyxona sayti
+</footer>
+
+</body>
+</html>
